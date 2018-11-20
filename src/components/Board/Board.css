@@ -1,0 +1,17 @@
+.Board {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  padding: 1rem;
+
+  background-color: #0a6600;
+}
+
+  .Board__center {
+    display: flex;
+  }

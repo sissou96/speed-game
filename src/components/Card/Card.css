@@ -1,0 +1,52 @@
+.Card {
+  position: relative;
+  width: 10rem;
+  height: 16rem;
+
+  perspective: 100rem;
+  transform-style: preserve-3d;
+
+}
+
+  .Card__face {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 10rem;
+    height: 16rem;
+    left: 0;
+    top: 0;
+
+    border: 1px solid black;
+    border-radius: .7rem;
+
+    backface-visibility: hidden;
+    transition: transform 3s;
+  }
+
+    .Card__face--front {
+      font-size: 40px;
+      font-family: sans-serif;
+      font-weight: bold;
+
+      background-color: white;
+    }
+
+    .Card__face--back {
+      background-color: #9e0000;
+      background-image: url('../../assets/cubes.png');
+
+      box-shadow: 0 0 0 .3rem white inset;
+
+      transform: rotateY(180deg);
+    }
+
+    .Card--is-flipped .Card__face--front {
+      transform: rotateY(180deg);
+    }
+
+    .Card--is-flipped .Card__face--back {
+      transform: rotateY(0deg);
+    }

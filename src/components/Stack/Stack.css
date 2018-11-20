@@ -1,0 +1,10 @@
+.Stack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11.5rem;
+  height: 17.5rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin: 0 1rem;
+}
