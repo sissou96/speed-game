@@ -8,12 +8,12 @@ import './Board.css'
 const board = (props) => {
   return (
     <div className="Board">
-      <Player />
+      <Player id="player1"/>
       <div className="Board__center">
-        <Stack withCard/>
-        <Stack />
+        <Stack id="stack6"/>
+        <Stack id="stack7"/>
       </div>
-      <Player />
+      <Player id="player2"/>
     </div>
   )
 }

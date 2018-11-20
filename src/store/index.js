@@ -4,8 +4,8 @@ import reducers from '../reducers'
 const createStacks = () => {
   let stacks = {}
   let id = ""
-  for (let i = 0; i < 12; i++) {
-    id = "stack"+toString(i)
+  for (let i = 1; i <= 12; i++) {
+    id = "stack".concat(i.toString())
     stacks[id] = []
   }
   return stacks
@@ -40,5 +40,8 @@ const initialState = {
   players: createPlayers(),
   board: createBoard()
 }
+
+initialState.stacks["stack1"].push("card1")
+console.log(initialState)
 
 export default createStore(reducers, initialState)
