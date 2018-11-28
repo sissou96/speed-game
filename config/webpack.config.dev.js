@@ -232,7 +232,8 @@ module.exports = {
                     },
                   },
                 ],
-                "@babel/plugin-proposal-object-rest-spread"
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/plugin-proposal-class-properties"
               ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/

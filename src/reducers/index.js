@@ -1,29 +1,15 @@
-const moveCard = (sourceStack, targetStack, state) => {
-  let sourceCard = state.stacks[sourceStack][0]
-  let newSourceStack = {}
-  newSourceStack[sourceStack] = state.stacks[sourceStack].slice(1)
+import { moveCard, revealCard, pickCards, updateGameState } from './modifiers'
 
-  let newTargetStack = {}
-  newTargetStack[targetStack] = [
-    sourceCard,
-    ...state.stacks[targetStack]
-  ]
-
-  let newStacks = {
-    ...state.stacks, 
-    newSourceStack,
-    newTargetStack
-  }
-  return  {...state, newStacks}
-}
-
-const reducer = (state, action) => {
+export default (state, action) => {
   switch(action.type) {
     case 'MOVE_CARD':
-      return moveCard(action.source, action.target)
+      let newState = moveCard(action.source, action.target, state)
+      return updateGameState(newState)
+    case 'PICK_CARDS':
+      return pickCards(state)
+    case 'REVEAL_CARD':
+      return revealCard(state, action.cardID)
     default:
       return state
   }
 }
-
-export default reducer

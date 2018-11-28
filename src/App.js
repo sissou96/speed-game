@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Board from './components/Board/Board'
-import store from './store'
-import { Provider } from 'react-redux'
+import PickCards from './components/PickCards/PickCards'
+import EndgameModal from './components/EndgameModal/EndgameModal'
 import './App.css'
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Board /> 
-      </Provider>
-    );
-  }
+const app = (props) => {
+  return (
+    <div>
+      <EndgameModal />
+      <Board /> 
+      <PickCards />
+    </div>
+  );
 }
 
-export default App;
+export default app;

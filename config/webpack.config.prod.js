@@ -323,6 +323,7 @@ module.exports = {
               configFile: false,
               compact: false,
               presets: [
+                "es2015",
                 [
                   require.resolve('babel-preset-react-app/dependencies'),
                   { helpers: true },

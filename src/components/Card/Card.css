@@ -1,5 +1,5 @@
 .Card {
-  position: relative;
+  position: absolute;
   width: 10rem;
   height: 16rem;
 
@@ -7,6 +7,18 @@
   transform-style: preserve-3d;
 
 }
+
+  .Card__value {
+    position: absolute;
+    top: .3rem;
+    left: .7rem;
+    font-weight: normal;
+    font-size: 3.5rem;
+  }
+
+  .Card__suit {
+    font-size: 7rem;
+  }
 
   .Card__face {
     position: absolute;
@@ -22,7 +34,7 @@
     border: 1px solid black;
     border-radius: .7rem;
 
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
     transition: transform 3s;
   }
 
@@ -39,14 +51,4 @@
       background-image: url('../../assets/cubes.png');
 
       box-shadow: 0 0 0 .3rem white inset;
-
-      transform: rotateY(180deg);
-    }
-
-    .Card--is-flipped .Card__face--front {
-      transform: rotateY(180deg);
-    }
-
-    .Card--is-flipped .Card__face--back {
-      transform: rotateY(0deg);
     }

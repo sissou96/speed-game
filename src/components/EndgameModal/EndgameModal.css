@@ -1,0 +1,27 @@
+.EndgameModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 9999;
+
+  background-image: linear-gradient(rgba(0, 153, 30, 0.8), rgba(0, 153, 30, 0.8))
+}
+
+  .EndgameModal--hidden {
+    display: none;
+  }
+
+  .EndgameModal__text {
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    color: white;
+  }
