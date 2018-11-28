@@ -287,9 +287,9 @@ module.exports = {
           {
             test: /\.(js|mjs|jsx|ts|tsx)$/,
             include: paths.appSrc,
-
             loader: require.resolve('babel-loader'),
             options: {
+              presets: ["@babel/preset-env"],
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
@@ -305,6 +305,8 @@ module.exports = {
                     },
                   },
                 ],
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/plugin-proposal-class-properties"
               ],
               cacheDirectory: true,
               // Save disk space when time isn't as important
@@ -323,11 +325,13 @@ module.exports = {
               configFile: false,
               compact: false,
               presets: [
-                "es2015",
                 [
                   require.resolve('babel-preset-react-app/dependencies'),
                   { helpers: true },
                 ],
+              ],
+              plugins: [
+           
               ],
               cacheDirectory: true,
               // Save disk space when time isn't as important
